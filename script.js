@@ -1,7 +1,7 @@
-// Troque somente as URLs abaixo antes de publicar.
+// Destinos dos botões. O portfólio permanece sem link por enquanto.
 const links = {
-  tracao: "#",
-  presenca: "#",
+  tracao: "https://plano-tracao.vercel.app/",
+  presenca: "https://wa.me/5548988004807",
   portfolio: "#",
 };
 
@@ -11,7 +11,9 @@ document.querySelectorAll("[data-link]").forEach((element) => {
 
   if (destination === "#") {
     element.removeAttribute("target");
-    element.setAttribute("aria-label", `${element.textContent.trim()} — link a configurar`);
+    element.removeAttribute("href");
+    element.setAttribute("aria-disabled", "true");
+    element.setAttribute("aria-label", "Acesse o Behance — em breve");
     element.addEventListener("click", (event) => event.preventDefault());
   }
 });
